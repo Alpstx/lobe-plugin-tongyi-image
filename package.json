@@ -11,7 +11,10 @@
   "dependencies": {
     "react": "^18",
     "react-dom": "^18",
-    "next": "13.5.6"
+    "next": "13.4.7",
+    "@lobehub/chat-plugin-sdk": "^1.32.4",
+    "@lobehub/chat-plugins-gateway": "^1.9.0",
+    "axios": "^1.7.2"
   },
   "devDependencies": {
     "typescript": "^5",
