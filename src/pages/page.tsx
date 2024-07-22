@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { lobeChat } from '@lobehub/chat-plugin-sdk/client';
+import Image from 'next/image';
 
 export default function Home() {
   const [imageUrl, setImageUrl] = useState<string | null>(null);
