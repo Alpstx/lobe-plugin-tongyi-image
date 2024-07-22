@@ -10,7 +10,7 @@ export const config = {
   runtime: 'edge',
 };
 
-export default async(req: NextRequest) => {
+const generate = async (req: NextRequest) => {
   try {
     if (req.method !== 'POST') {
       return NextResponse.json({ error: 'Method not allowed' }, { status: 405 });
@@ -104,3 +104,5 @@ export default async(req: NextRequest) => {
     return NextResponse.json({ error: 'Failed to generate image' }, { status: 500 });
   }
 }
+
+export default generate;

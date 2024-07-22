@@ -24,10 +24,6 @@
     "tags": ["image", "generator", "tongyi", "wanxiang", "alibaba"],
     "title": "Tongyi wanxiang Image Generator"
   },
-  "ui": {
-    "url": "http://localhost:3000",
-    "height": 200
-  },
   "settings": {
     "type": "object",
     "required": ["ALIBABA_API_KEY"],
