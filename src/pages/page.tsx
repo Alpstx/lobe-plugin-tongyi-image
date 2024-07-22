@@ -8,21 +8,21 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
 
   const generateImage = async (prompt: string) => {
-    setLoading(true);
+    setLoading(true)
     try {
       const response = await fetch('/api/generate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ prompt })
-      });
-      const data = await response.json();
-      setImageUrl(data.imageUrl);
-      lobeChat.setPluginMessage(`Image generated: ${data.imageUrl}`);
+      })
+      const data = await response.json()
+      setImageUrl(data.imageUrl)
+      lobeChat.setPluginMessage(`Image generated: ${data.imageUrl}`)
     } catch (error) {
-      console.error('Error generating image:', error);
-      lobeChat.setPluginMessage('Failed to generate image');
+      console.error('Error generating image:', error)
+      lobeChat.setPluginMessage('Failed to generate image')
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
   };
 
@@ -31,10 +31,10 @@ export default function Home() {
       {loading ? (
         <p>Generating image...</p>
       ) : imageUrl ? (
-        <img src={imageUrl} alt="Generated image" className="max-w-xl" />
+        <Image src={imageUrl} alt="Generated image" className="max-w-xl" />
       ) : (
         <p>No image generated yet</p>
       )}
     </div>
-  );
+  )
 }
