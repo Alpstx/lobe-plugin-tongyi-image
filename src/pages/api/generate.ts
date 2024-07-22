@@ -1,6 +1,6 @@
 import {NextRequest, NextResponse} from 'next/server';
 import axios from 'axios';
-import {IImageGenerationResponse, IImageGenerationResult, IImageGenerationStatusResponse, Settings} from '@/pages/type';
+import {IImageGenerationResponse, IImageGenerationResult, IImageGenerationStatusResponse, Settings} from '@/type';
 import {createErrorResponse, getPluginSettingsFromRequest, PluginErrorType} from "@lobehub/chat-plugin-sdk";
 
 // 这里应该是你从阿里云获得的API密钥
