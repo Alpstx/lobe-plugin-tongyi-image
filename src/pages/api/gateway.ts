@@ -1,10 +1,8 @@
-import {createGatewayOnNodeRuntime} from "@lobehub/chat-plugins-gateway";
-
 export const config = {
     runtime: 'edge',
 };
 
-const fun = async (req: Request, res: Response) => {
+const fun = async (req: Request) => {
   console.log('in gateway', process.env.NODE_ENV)
   if (process.env.NODE_ENV === 'development') {
     const { createGatewayOnEdgeRuntime } = await import('@lobehub/chat-plugins-gateway');
@@ -12,7 +10,7 @@ const fun = async (req: Request, res: Response) => {
     return createGatewayOnEdgeRuntime()(req);
   }
 
-  return createGatewayOnNodeRuntime()(req, res);
+  return new Response('gateway');
 };
 
 export default fun
