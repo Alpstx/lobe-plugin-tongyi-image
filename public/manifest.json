@@ -2,7 +2,7 @@
   "identifier": "tongyi-image-generator",
   "api": [
     {
-      "url": "https://lobe-plugin-tongyi-image.vercel.app/api/generate",
+      "url": "http://localhost:3000/api/generate",
       "name": "generateImage",
       "description": "Generate an image based on the given prompt using Alibaba's Tongyi Wanxiang model",
       "parameters": {
@@ -17,7 +17,7 @@
       }
     }
   ],
-  "gateway": "https://lobe-plugin-tongyi-image.vercel.app/api/gateway",
+  "gateway": "http://localhost:3000/api/gateway",
   "meta": {
     "avatar": "🎉",
     "description": "This plugin uses Alibaba's Tongyi Wanxiang model to generate images based on text prompts.",
