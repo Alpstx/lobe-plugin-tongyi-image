@@ -26,7 +26,6 @@ const generate = async (req: NextRequest) => {
 
     const body = await req.json();
     const { prompt } = body
-    console.log('input:', prompt);
 
     // 调用阿里云的API生成图片
     const response = await axios.post(
@@ -73,7 +72,6 @@ const generate = async (req: NextRequest) => {
             });
 
         statusData = statusResponse.data;
-        console.log('statusData:', statusData);
         // 间隔500ms
         await new Promise((resolve) => setTimeout(resolve, 500));
     } while(statusData.output.task_status === 'RUNNING' || statusData.output.task_status === 'PENDING');
