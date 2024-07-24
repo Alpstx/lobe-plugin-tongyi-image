@@ -1,3 +1,5 @@
+import {createGatewayOnNodeRuntime} from "@lobehub/chat-plugins-gateway";
+
 export const config = {
     runtime: 'edge',
 };
@@ -10,7 +12,7 @@ const fun = async (req: Request) => {
     return createGatewayOnEdgeRuntime()(req);
   }
 
-  return new Response('gateway');
+  return createGatewayOnNodeRuntime()(req);
 };
 
 export default fun
