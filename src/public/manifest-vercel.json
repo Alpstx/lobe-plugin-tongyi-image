@@ -2,7 +2,7 @@
   "identifier": "tongyi-image-generator",
   "api": [
     {
-      "url": "https://lobe-plugin-tongyi-image.vercel.app/api/generate",
+      "url": "http://8.142.33.55:13456/api/generate",
       "name": "generateImage",
       "description": "Generate an image based on the given prompt using Alibaba's Tongyi Wanxiang model",
       "parameters": {
