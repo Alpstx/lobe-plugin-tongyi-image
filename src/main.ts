@@ -14,7 +14,7 @@ async function bootstrap() {
     credentials: true,
     maxAge: 3600,
   })
-  app.useStaticAssets('public', {
+  app.useStaticAssets('dist/public', {
     prefix: '/static',
   })
   // app.useStaticAssets('src/public', {
