@@ -1,15 +1,26 @@
 {
     "version": 2,
-    "builds": [
-      {
-        "src": "src/main.ts",
-        "use": "@now/node"
-      }
-    ],
+    "build": {
+        "cmd": "npm run build"
+    },
+    "functions": {
+        "api/*": {
+            "runtime": "nodejs18.x",
+            "entryPoint": "dist/main.js",
+            "handler": "dist/main",
+            "includeFiles": "dist/**",
+            "excludeFiles": ["node_modules/**/*", "test/**/*"]
+        }
+    },
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "src/main.ts"
+        "functions": {
+            "api/*": "api"
+        }
       }
-    ]
+    ],
+    "output": {
+        "distDir": "dist"
+    }
 }
