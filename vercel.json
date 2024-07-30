@@ -1,0 +1,26 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "main.js",
+        "use": "@now/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/api/generate",
+        "methods": ["POST"],
+        "dest": "generate/generate.controller.js"
+      },
+      {
+        "src": "/api/cat",
+        "methods": ["GET"],
+        "dest": "cat/cat.controller.js"
+      },
+      {
+        "src": "/static/*",
+        "methods": ["GET", "POST", "OPTIONS"],
+        "dest": "public/*" 
+      }
+    ]
+}
