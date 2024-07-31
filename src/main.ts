@@ -1,6 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { NestExpressApplication } from '@nestjs/platform-express';
+import * as fs from 'fs';
 
 const httpsOptions = {
   ca: fs.readFileSync('/www/ssl/aerbu2.top_chain.crt'),
