@@ -2,8 +2,17 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { NestExpressApplication } from '@nestjs/platform-express';
 
+const httpsOptions = {
+  ca: fs.readFileSync('/www/ssl/aerbu2.top_chain.crt'),
+  key: fs.readFileSync('/www/ssl/aerbu2.top.key'),
+  cert: fs.readFileSync('/www/ssl/aerbu2.top_public.crt'),
+}
+
 async function bootstrap() {
-  const app = await NestFactory.create<NestExpressApplication>(AppModule, {cors: true});
+  const app = await NestFactory.create<NestExpressApplication>(AppModule, {
+    cors: true,
+    httpsOptions
+  });
   app.setGlobalPrefix('api');
   app.enableCors({
     origin: true,
